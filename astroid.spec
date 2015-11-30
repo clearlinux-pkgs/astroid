@@ -4,7 +4,7 @@
 #
 Name     : astroid
 Version  : 1.3.8
-Release  : 13
+Release  : 14
 URL      : https://pypi.python.org/packages/source/a/astroid/astroid-1.3.8.tar.gz
 Source0  : https://pypi.python.org/packages/source/a/astroid/astroid-1.3.8.tar.gz
 Summary  : A abstract syntax tree for Python with inference support.
@@ -46,8 +46,8 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 python -m unittest discover -s astroid/tests -p "unittest*.py" || :
 %install
 rm -rf %{buildroot}
-python2 setup.py build -b py2 install --root=%{buildroot}
-python3 setup.py build -b py3 install --root=%{buildroot}
+python2 -tt setup.py build -b py2 install --root=%{buildroot}
+python3 -tt setup.py build -b py3 install --root=%{buildroot}
 
 %files
 %defattr(-,root,root,-)
