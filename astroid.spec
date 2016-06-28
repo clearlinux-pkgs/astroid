@@ -4,7 +4,7 @@
 #
 Name     : astroid
 Version  : 1.3.8
-Release  : 20
+Release  : 21
 URL      : https://pypi.python.org/packages/source/a/astroid/astroid-1.3.8.tar.gz
 Source0  : https://pypi.python.org/packages/source/a/astroid/astroid-1.3.8.tar.gz
 Summary  : A abstract syntax tree for Python with inference support.
