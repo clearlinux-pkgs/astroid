@@ -4,7 +4,7 @@
 #
 Name     : astroid
 Version  : 1.4.8
-Release  : 26
+Release  : 27
 URL      : http://pypi.debian.net/astroid/astroid-1.4.8.tar.gz
 Source0  : http://pypi.debian.net/astroid/astroid-1.4.8.tar.gz
 Summary  : A abstract syntax tree for Python with inference support.
