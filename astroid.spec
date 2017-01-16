@@ -4,7 +4,7 @@
 #
 Name     : astroid
 Version  : 1.4.8
-Release  : 27
+Release  : 28
 URL      : http://pypi.debian.net/astroid/astroid-1.4.8.tar.gz
 Source0  : http://pypi.debian.net/astroid/astroid-1.4.8.tar.gz
 Summary  : A abstract syntax tree for Python with inference support.
@@ -37,6 +37,7 @@ python components for the astroid package.
 
 %build
 export LANG=C
+export SOURCE_DATE_EPOCH=1484529970
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
@@ -46,9 +47,10 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 python -m unittest discover -s astroid/tests -p "unittest*.py" || :
 %install
+export SOURCE_DATE_EPOCH=1484529970
 rm -rf %{buildroot}
-python2 -tt setup.py build -b py2 install --root=%{buildroot}
-python3 -tt setup.py build -b py3 install --root=%{buildroot}
+python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
+python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
 
 %files
 %defattr(-,root,root,-)
