@@ -4,13 +4,17 @@
 #
 Name     : astroid
 Version  : 1.4.9
-Release  : 29
+Release  : 30
 URL      : http://pypi.debian.net/astroid/astroid-1.4.9.tar.gz
 Source0  : http://pypi.debian.net/astroid/astroid-1.4.9.tar.gz
 Summary  : A abstract syntax tree for Python with inference support.
 Group    : Development/Tools
 License  : GPL-2.0 LGPL-2.1
 Requires: astroid-python
+Requires: lazy-object-proxy
+Requires: six
+Requires: wrapt
+BuildRequires : lazy-object-proxy
 BuildRequires : logilab-common
 BuildRequires : pbr
 BuildRequires : pip
@@ -18,6 +22,7 @@ BuildRequires : python-dev
 BuildRequires : python3-dev
 BuildRequires : setuptools
 BuildRequires : six
+BuildRequires : wrapt-python
 
 %description
 .. image:: https://drone.io/bitbucket.org/logilab/astroid/status.png
@@ -37,7 +42,7 @@ python components for the astroid package.
 
 %build
 export LANG=C
-export SOURCE_DATE_EPOCH=1487186647
+export SOURCE_DATE_EPOCH=1488045336
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
@@ -47,7 +52,7 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 python -m unittest discover -s astroid/tests -p "unittest*.py" || :
 %install
-export SOURCE_DATE_EPOCH=1487186647
+export SOURCE_DATE_EPOCH=1488045336
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
