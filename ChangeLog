@@ -1,6 +1,64 @@
 Change log for the astroid package (used to be astng)
 =====================================================
 
+2017-12-15 -- 1.6.0
+
+   * When verifying duplicates classes in MRO, ignore on-the-fly generated classes
+
+     Close PyCQA/pylint#1706
+
+   * Add brain tip for attrs library to prevent unsupported-assignment-operation false positives
+
+	 Close PYCQA/pylint#1698
+
+   * file_stream was removed, since it was deprecated for three releases
+
+     Instead one should use the .stream() method.
+
+   * Vast improvements to numpy support
+
+   * Add brain tips for curses
+
+     Close PyCQA/pylint#1703
+
+   * Add brain tips for UUID.int
+
+     Close PyCQA/pylint#961
+
+   * The result of using object.__new__ as class decorator is correctly inferred as instance
+
+     Close #172
+
+   * Enums created with functional syntax are now iterable
+
+   * Enums created with functional syntax are now subscriptable
+
+   * Don't crash when getting the string representation of BadUnaryOperationMessage
+
+     In some cases, when the operand does not have a .name attribute,
+     getting the string representation of a BadUnaryOperationMessage leads
+     to a crash.
+
+     Close PyCQA/pylint#1563
+
+   * Don't raise DuplicateBaseError when classes at different locations are used
+
+     For instance, one can implement a namedtuple base class, which gets reused
+     on a class with the same name later on in the file. Until now, we considered
+     these two classes as being the same, because they shared the name, but in fact
+     they are different, being created at different locations and through different
+     means.
+
+     Close PyCQA/pylint#1458
+
+    * The func form of namedtuples with keywords is now understood
+
+      Close PyCQA/pylint#1530
+
+    * Dunder class at method level is now inferred as the class of the method
+
+      Close PyCQA/pylint#1328
+
 2017-06-03 -- 1.5.3
 
     * enum34 dependency is forced to be at least version 1.1.3. Fixes spurious
@@ -1006,7 +1064,7 @@ Change log for the astroid package (used to be astng)
 
 
 2010-03-22  --  0.20.0
-    * fix #20464: raises “TypeError: '_Yes' object is not iterable” on list inference
+    * fix #20464: raises ?TypeError: '_Yes' object is not iterable? on list inference
 
     * fix #19882: pylint hangs
 
