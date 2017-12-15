@@ -4,7 +4,7 @@
 #
 Name     : astroid
 Version  : 1.6.0
-Release  : 41
+Release  : 42
 URL      : https://pypi.debian.net/astroid/astroid-1.6.0.tar.gz
 Source0  : https://pypi.debian.net/astroid/astroid-1.6.0.tar.gz
 Summary  : A abstract syntax tree for Python with inference support.
@@ -66,7 +66,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1513360841
+export SOURCE_DATE_EPOCH=1513362597
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
@@ -76,7 +76,7 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 python -m unittest discover -s astroid/tests -p "unittest*.py" || :
 %install
-export SOURCE_DATE_EPOCH=1513360841
+export SOURCE_DATE_EPOCH=1513362597
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
