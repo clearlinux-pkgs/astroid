@@ -1,6 +1,34 @@
 Change log for the astroid package (used to be astng)
 =====================================================
 
+2018-03-16 -- 1.6.2
+
+   * Fix submodule imports from six
+
+     Close PYCQA/pylint#1640
+
+   * Enhancement of brain_numpy by adding different types from
+     numpy.core.numerictypes
+
+   * Fix RecursionError for augmented assign
+
+     Close #437, #447, #313, PyCQA/pylint#1642, PyCQA/pylint#1805, PyCQA/pylint#1854, PyCQA/pylint#1452
+
+
+   * Stop most inference tip overwrites from happening by using
+     predicates on existing inference_tip transforms.
+
+     Close #472
+
+   * Add missing attrs special attribute
+
+	 Close PyCQA/pylint#1884
+
+   * Fix ``contextlib.contextmanager`` inference for nested context managers
+
+     Close #1699
+
+
 2018-01-23 -- 1.6.1
 
    * Fix a crash when __annotations__ access a parent's __init__ that does not have arguments
@@ -1384,6 +1412,3 @@ Change log for the astroid package (used to be astng)
       longer be maintained (this explains that this package is starting with
       the 0.13 version number, since the fork occurs with the version
       released in logilab-common 0.12).
-
-
-
