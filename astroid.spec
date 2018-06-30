@@ -4,7 +4,7 @@
 #
 Name     : astroid
 Version  : 1.6.3
-Release  : 56
+Release  : 57
 URL      : https://pypi.python.org/packages/c7/fc/7a6e48b7bea11e53cab81fcb463c943167c274cafa98bf8faca69129b3bb/astroid-1.6.3.tar.gz
 Source0  : https://pypi.python.org/packages/c7/fc/7a6e48b7bea11e53cab81fcb463c943167c274cafa98bf8faca69129b3bb/astroid-1.6.3.tar.gz
 Summary  : A abstract syntax tree for Python with inference support.
@@ -63,7 +63,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1529091073
+export SOURCE_DATE_EPOCH=1530329267
 python3 setup.py build -b py3
 
 %check

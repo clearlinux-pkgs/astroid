@@ -2,3 +2,4 @@
 # undesirable. One entry per line, no whitespace.
 lazy-object-proxy-python
 singledispatch-python
+backports.functools_lru_cache
