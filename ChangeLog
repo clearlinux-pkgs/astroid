@@ -2,6 +2,19 @@
 astroid's ChangeLog
 ===================
 
+What's New in astroid 2.2.1?
+============================
+Release Date: 2019-03-02
+
+* Make sure to infer the arguments to the `slice()` builtin
+
+ Close PyCQA/pylint#2770
+
+* Correctly instantiate exception instances when inferring their attributes with objectmodel
+
+ Close PyCQA/pylint#2776
+
+
 What's New in astroid 2.2.0?
 ============================
 Release Date: 2019-02-27
