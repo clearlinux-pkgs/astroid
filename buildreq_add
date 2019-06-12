@@ -3,3 +3,4 @@
 logilab-common
 six
 lazy-object-proxy
+typed_ast

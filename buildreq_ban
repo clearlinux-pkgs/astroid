@@ -3,3 +3,4 @@
 lazy-object-proxy-python
 singledispatch-python
 backports.functools_lru_cache
+typed-ast

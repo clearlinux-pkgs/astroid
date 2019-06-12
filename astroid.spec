@@ -4,10 +4,10 @@
 #
 Name     : astroid
 Version  : 2.2.5
-Release  : 78
+Release  : 79
 URL      : https://files.pythonhosted.org/packages/85/e3/4ec967f7db4644b1fe849e4724191346d3e3f8172631ad7266f7f17a6018/astroid-2.2.5.tar.gz
 Source0  : https://files.pythonhosted.org/packages/85/e3/4ec967f7db4644b1fe849e4724191346d3e3f8172631ad7266f7f17a6018/astroid-2.2.5.tar.gz
-Summary  : a graphical threads-with-tags style, lightweight and fast, email client for notmuch, inspired by sup and others
+Summary  : An abstract syntax tree for Python with inference support.
 Group    : Development/Tools
 License  : GPL-2.0 LGPL-2.1
 Requires: astroid-license = %{version}-%{release}
@@ -16,20 +16,22 @@ Requires: astroid-python3 = %{version}-%{release}
 Requires: enum34
 Requires: lazy-object-proxy
 Requires: six
-Requires: typed-ast
+Requires: typed_ast
 Requires: typing
 Requires: wrapt
 BuildRequires : buildreq-distutils3
+BuildRequires : enum34
 BuildRequires : lazy-object-proxy
 BuildRequires : logilab-common
+BuildRequires : pytest
 BuildRequires : pytest-runner
 BuildRequires : six
+BuildRequires : typed_ast
+BuildRequires : typing
+BuildRequires : wrapt
 
 %description
-Astroid
 =======
-.. image:: https://travis-ci.org/PyCQA/astroid.svg?branch=master
-:target: https://travis-ci.org/PyCQA/astroid
 
 %package license
 Summary: license components for the astroid package.
@@ -65,8 +67,12 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552068412
-export LDFLAGS="${LDFLAGS} -fno-lto"
+export SOURCE_DATE_EPOCH=1560301339
+export GCC_IGNORE_WERROR=1
+export CFLAGS="$CFLAGS -fno-lto "
+export FCFLAGS="$CFLAGS -fno-lto "
+export FFLAGS="$CFLAGS -fno-lto "
+export CXXFLAGS="$CXXFLAGS -fno-lto "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
