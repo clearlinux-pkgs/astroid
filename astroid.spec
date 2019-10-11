@@ -4,22 +4,20 @@
 #
 Name     : astroid
 Version  : 2.3.1
-Release  : 82
+Release  : 83
 URL      : https://files.pythonhosted.org/packages/15/7c/c56122bdec2cc8508aca5eae27502f3fdd970f4a9233ba43e398d79847de/astroid-2.3.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/15/7c/c56122bdec2cc8508aca5eae27502f3fdd970f4a9233ba43e398d79847de/astroid-2.3.1.tar.gz
-Summary  : a graphical threads-with-tags style, lightweight and fast, email client for notmuch, inspired by sup and others
+Summary  : An abstract syntax tree for Python with inference support.
 Group    : Development/Tools
 License  : GPL-2.0 LGPL-2.1
 Requires: astroid-license = %{version}-%{release}
 Requires: astroid-python = %{version}-%{release}
 Requires: astroid-python3 = %{version}-%{release}
-Requires: enum34
 Requires: lazy-object-proxy
 Requires: six
 Requires: typed_ast
 Requires: wrapt
 BuildRequires : buildreq-distutils3
-BuildRequires : enum34
 BuildRequires : lazy-object-proxy
 BuildRequires : logilab-common
 BuildRequires : pytest
@@ -29,10 +27,7 @@ BuildRequires : typed_ast
 BuildRequires : wrapt
 
 %description
-Astroid
 =======
-.. image:: https://travis-ci.org/PyCQA/astroid.svg?branch=master
-:target: https://travis-ci.org/PyCQA/astroid
 
 %package license
 Summary: license components for the astroid package.
@@ -68,8 +63,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1569849247
-# -Werror is for werrorists
+export SOURCE_DATE_EPOCH=1570827456
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$CFLAGS -fno-lto "
@@ -87,8 +81,8 @@ python -m unittest discover -s astroid/tests -p "unittest*.py" || :
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/astroid
-cp COPYING %{buildroot}/usr/share/package-licenses/astroid/COPYING
-cp COPYING.LESSER %{buildroot}/usr/share/package-licenses/astroid/COPYING.LESSER
+cp %{_builddir}/astroid-2.3.1/COPYING %{buildroot}/usr/share/package-licenses/astroid/06877624ea5c77efe3b7e39b0f909eda6e25a4ec
+cp %{_builddir}/astroid-2.3.1/COPYING.LESSER %{buildroot}/usr/share/package-licenses/astroid/9a1929f4700d2407c70b507b3b2aaf6226a9543c
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
@@ -99,8 +93,8 @@ echo ----[ mark ]----
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/astroid/COPYING
-/usr/share/package-licenses/astroid/COPYING.LESSER
+/usr/share/package-licenses/astroid/06877624ea5c77efe3b7e39b0f909eda6e25a4ec
+/usr/share/package-licenses/astroid/9a1929f4700d2407c70b507b3b2aaf6226a9543c
 
 %files python
 %defattr(-,root,root,-)
