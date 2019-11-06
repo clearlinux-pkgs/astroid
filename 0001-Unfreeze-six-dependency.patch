@@ -1,0 +1,34 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Patrick McCarty <patrick.mccarty@intel.com>
+Date: Tue, 5 Nov 2019 16:01:02 -0800
+Subject: [PATCH] Unfreeze six dependency
+
+---
+ astroid.egg-info/requires.txt | 2 +-
+ astroid/__pkginfo__.py        | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/astroid.egg-info/requires.txt b/astroid.egg-info/requires.txt
+index 5f5bd50..202d945 100644
+--- a/astroid.egg-info/requires.txt
++++ b/astroid.egg-info/requires.txt
+@@ -1,5 +1,5 @@
+ lazy_object_proxy==1.4.*
+-six==1.12
++six
+ wrapt==1.11.*
+ 
+ [:implementation_name == "cpython" and python_version < "3.8"]
+diff --git a/astroid/__pkginfo__.py b/astroid/__pkginfo__.py
+index 5657f89..33009fd 100644
+--- a/astroid/__pkginfo__.py
++++ b/astroid/__pkginfo__.py
+@@ -23,7 +23,7 @@ numversion = tuple(int(elem) for elem in version.split(".") if elem.isdigit())
+ extras_require = {}
+ install_requires = [
+     "lazy_object_proxy==1.4.*",
+-    "six==1.12",
++    "six",
+     "wrapt==1.11.*",
+     'typed-ast>=1.4.0,<1.5;implementation_name== "cpython" and python_version<"3.8"',
+ ]

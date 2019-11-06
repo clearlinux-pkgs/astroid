@@ -4,10 +4,10 @@
 #
 Name     : astroid
 Version  : 2.3.2
-Release  : 84
+Release  : 85
 URL      : https://files.pythonhosted.org/packages/94/32/58db7000d735f1f6e4b60c8ae0137b96b227e3ec4b640d8cf28f16e5bf62/astroid-2.3.2.tar.gz
 Source0  : https://files.pythonhosted.org/packages/94/32/58db7000d735f1f6e4b60c8ae0137b96b227e3ec4b640d8cf28f16e5bf62/astroid-2.3.2.tar.gz
-Summary  : a graphical threads-with-tags style, lightweight and fast, email client for notmuch, inspired by sup and others
+Summary  : An abstract syntax tree for Python with inference support.
 Group    : Development/Tools
 License  : GPL-2.0 LGPL-2.1
 Requires: astroid-license = %{version}-%{release}
@@ -25,12 +25,10 @@ BuildRequires : pytest-runner
 BuildRequires : six
 BuildRequires : typed_ast
 BuildRequires : wrapt
+Patch1: 0001-Unfreeze-six-dependency.patch
 
 %description
-Astroid
 =======
-.. image:: https://travis-ci.org/PyCQA/astroid.svg?branch=master
-:target: https://travis-ci.org/PyCQA/astroid
 
 %package license
 Summary: license components for the astroid package.
@@ -60,14 +58,15 @@ python3 components for the astroid package.
 
 %prep
 %setup -q -n astroid-2.3.2
+cd %{_builddir}/astroid-2.3.2
+%patch1 -p1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1571404666
-# -Werror is for werrorists
+export SOURCE_DATE_EPOCH=1572998594
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$CFLAGS -fno-lto "
