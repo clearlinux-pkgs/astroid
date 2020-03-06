@@ -4,7 +4,7 @@
 #
 Name     : astroid
 Version  : 2.3.3
-Release  : 91
+Release  : 92
 URL      : https://files.pythonhosted.org/packages/40/df/70dfe3eed7352dd3f5c7cc74518ceed78230b2ca9d7d60dbabd81d5390ba/astroid-2.3.3.tar.gz
 Source0  : https://files.pythonhosted.org/packages/40/df/70dfe3eed7352dd3f5c7cc74518ceed78230b2ca9d7d60dbabd81d5390ba/astroid-2.3.3.tar.gz
 Summary  : An abstract syntax tree for Python with inference support.
@@ -51,7 +51,7 @@ Summary: python3 components for the astroid package.
 Group: Default
 Requires: python3-core
 Provides: pypi(astroid)
-Requires: pypi(lazy-object-proxy)
+Requires: pypi(lazy_object_proxy)
 Requires: pypi(six)
 Requires: pypi(wrapt)
 
@@ -68,7 +68,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1583442803
+export SOURCE_DATE_EPOCH=1583527003
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$CFLAGS -fno-lto "
