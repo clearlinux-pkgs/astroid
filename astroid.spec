@@ -4,7 +4,7 @@
 #
 Name     : astroid
 Version  : 2.4.2
-Release  : 96
+Release  : 97
 URL      : https://files.pythonhosted.org/packages/ee/25/d3f01bc7e16641e0acb9a8c12decf1d5c2f04336c1f19ba69dc8e6927dff/astroid-2.4.2.tar.gz
 Source0  : https://files.pythonhosted.org/packages/ee/25/d3f01bc7e16641e0acb9a8c12decf1d5c2f04336c1f19ba69dc8e6927dff/astroid-2.4.2.tar.gz
 Summary  : An abstract syntax tree for Python with inference support.
@@ -23,6 +23,7 @@ BuildRequires : logilab-common
 BuildRequires : six
 BuildRequires : typed_ast
 BuildRequires : wrapt
+Patch1: deps.patch
 
 %description
 =======
@@ -60,13 +61,14 @@ python3 components for the astroid package.
 %prep
 %setup -q -n astroid-2.4.2
 cd %{_builddir}/astroid-2.4.2
+%patch1 -p1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1591757781
+export SOURCE_DATE_EPOCH=1594747430
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
