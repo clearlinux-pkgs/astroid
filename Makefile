@@ -1,5 +1,5 @@
 PKG_NAME := astroid
-URL = https://files.pythonhosted.org/packages/bc/72/51d6389690b30adf1ad69993923f81b71b2110b16e02fd0afd378e30c43c/astroid-2.5.6.tar.gz
+URL = https://files.pythonhosted.org/packages/0b/9e/214759befde32cfb214d265cbf163620e7c711b9b4b40533acf9a780252a/astroid-2.5.7.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
