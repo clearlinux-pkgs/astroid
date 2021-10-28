@@ -4,7 +4,7 @@
 #
 Name     : astroid
 Version  : 2.8.4
-Release  : 128
+Release  : 129
 URL      : https://files.pythonhosted.org/packages/85/9a/cb3960a8e73373462d7ae2607df68d60684e1d4b18a6b79becd77ecac63f/astroid-2.8.4.tar.gz
 Source0  : https://files.pythonhosted.org/packages/85/9a/cb3960a8e73373462d7ae2607df68d60684e1d4b18a6b79becd77ecac63f/astroid-2.8.4.tar.gz
 Summary  : An abstract syntax tree for Python with inference support.
